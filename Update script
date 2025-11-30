@@ -1,0 +1,8 @@
+-- Atualizar status de pedido
+UPDATE pedido SET status = 'entregue' WHERE pedido_id = 1;
+
+-- Atualizar estoque de ingrediente
+UPDATE ingrediente SET qtd_estoque = qtd_estoque - 2 WHERE ingrediente_id = 2;
+
+-- Atualizar status da mesa
+UPDATE mesa SET status = 'ocupada' WHERE mesa_id = 1;
