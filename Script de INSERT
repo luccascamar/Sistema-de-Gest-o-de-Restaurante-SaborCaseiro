@@ -1,0 +1,43 @@
+-- Inserindo clientes
+INSERT INTO cliente (nome, telefone, email) VALUES
+('Maria Silva', '41999999999', 'maria@email.com'),
+('João Souza', '41988888888', 'joao@email.com');
+
+-- Inserindo funcionários
+INSERT INTO funcionario (nome, cargo) VALUES
+('Carlos Mendes', 'Garçom'),
+('Ana Paula', 'Atendente');
+
+-- Inserindo mesas
+INSERT INTO mesa (identificacao, capacidade, status) VALUES
+('M1', 4, 'livre'),
+('M2', 6, 'ocupada');
+
+-- Inserindo pratos
+INSERT INTO prato (nome, categoria, preco) VALUES
+('Feijoada', 'Principal', 45.00),
+('Suco Natural', 'Bebida', 8.00);
+
+-- Inserindo ingredientes
+INSERT INTO ingrediente (nome, unidade_medida, qtd_estoque) VALUES
+('Feijão Preto', 'kg', 20),
+('Laranja', 'unidade', 50);
+
+-- Relacionando prato e ingrediente
+INSERT INTO prato_ingrediente (prato_id, ingrediente_id, qtd_por_prato) VALUES
+(1, 1, 0.5),
+(2, 2, 2);
+
+-- Inserindo pedidos
+INSERT INTO pedido (cliente_id, funcionario_id, mesa_id, tipo, status) VALUES
+(1, 1, 1, 'salão', 'aberto'),
+(2, 2, NULL, 'delivery', 'aberto');
+
+-- Inserindo itens do pedido
+INSERT INTO pedido_item (pedido_id, prato_id, quantidade, preco_unitario) VALUES
+(1, 1, 2, 45.00),
+(2, 2, 3, 8.00);
+
+-- Inserindo reservas
+INSERT INTO reserva (cliente_id, mesa_id, data_reserva, hora_reserva, qtd_pessoas) VALUES
+(1, 2, '2025-12-01', '19:00:00', 4);
