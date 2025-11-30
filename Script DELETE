@@ -1,0 +1,8 @@
+-- Excluir reserva cancelada
+DELETE FROM reserva WHERE reserva_id = 1;
+
+-- Excluir item de pedido específico
+DELETE FROM pedido_item WHERE pedido_item_id = 2;
+
+-- Excluir cliente sem pedidos
+DELETE FROM cliente WHERE cliente_id = 2;
