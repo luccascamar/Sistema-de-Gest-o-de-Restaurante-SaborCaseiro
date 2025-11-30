@@ -1,0 +1,18 @@
+-- 1. Listar todos os clientes
+SELECT * FROM cliente;
+
+-- 2. Consultar pedidos abertos
+SELECT pedido_id, tipo, status FROM pedido WHERE status = 'aberto';
+
+-- 3. Listar pratos ordenados por preço
+SELECT nome, preco FROM prato ORDER BY preco DESC;
+
+-- 4. Consultar reservas futuras
+SELECT cliente_id, mesa_id, data_reserva, hora_reserva
+FROM reserva
+WHERE data_reserva >= CURDATE();
+
+-- 5. JOIN: pedidos com nome do cliente
+SELECT p.pedido_id, c.nome AS cliente, p.status
+FROM pedido p
+JOIN cliente c ON p.cliente_id = c.cliente_id;
